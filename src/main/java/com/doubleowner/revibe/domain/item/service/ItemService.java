@@ -86,7 +86,6 @@ public class ItemService {
     }
 
     // 상품 전체 조회
-    @Cacheable(cacheNames = "getItems", key = "'items:page:'+ #page+':size'+#size", cacheManager = "itemCacheManager", condition = "#page==1")
     public List<ItemResponseDto> getAllItems(int page, int size, String keyword, String brand) {
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<Item> items = itemRepository.searchItems(pageable, keyword, brand);
