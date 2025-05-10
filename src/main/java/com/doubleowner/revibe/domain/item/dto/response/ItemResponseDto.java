@@ -3,8 +3,10 @@ package com.doubleowner.revibe.domain.item.dto.response;
 import com.doubleowner.revibe.domain.item.entity.Category;
 import com.doubleowner.revibe.domain.item.entity.Item;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class ItemResponseDto {
 
     private Long itemId;
@@ -13,7 +15,7 @@ public class ItemResponseDto {
 
     private String description;
 
-    private Category category;
+    private String category;
 
     private String image;
 
@@ -27,7 +29,7 @@ public class ItemResponseDto {
         this.itemId = itemId;
         this.name = name;
         this.description = description;
-        this.category = category;
+        this.category = category.name();
         this.image = image;
         this.brandName = brandName;
         this.adminName = adminName;
