@@ -1,9 +1,9 @@
 name: docker-multi-stage build
 
 on:
-  pull_request:
+  push:
     branches:
-      - develop
+      - main
 
 jobs:
   docker-build-and-push:
